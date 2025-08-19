@@ -1,0 +1,15 @@
+import React from "react";
+import '../constants/colors.css';
+
+function Logo() {
+    return (
+        <svg width="108" height="41" viewBox="0 0 108 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 24.4506H15.9727V40.5462H24.2048V24.4506H40.3004V16.0957H24.2048V6.10352e-05H15.9727V16.0957H0V24.4506Z" fill="#00AAE6"/>
+            <rect x="48.2852" width="8.35496" height="40.5461" fill="#00AAE6"/>
+            <path d="M77.16 13.5431H67.6992V8.10925H92.0269V13.5154H82.689V32.4369H77.16V13.5431Z" fill="var(--logo)"/>
+            <path d="M108 32.4369H102.594V13.5153H97.3105V8.10919H108V32.4369Z" fill="var(--logo)"/>
+        </svg>
+    )
+}
+
+export default Logo;

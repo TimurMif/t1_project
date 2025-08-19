@@ -1,0 +1,19 @@
+:root {
+  --main-bg: #F3F4F6;
+  --input-border: #C6C8D2;
+  --input-bg: #fff;
+  --input-placeholder: #9294A1;
+  --logo: #000000;
+  --text: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-bg: #000000;
+    --input-border: #686A73;
+    --input-bg: #3E3E3E;
+    --input-placeholder: #EEEEEE;
+    --logo: #FFFFFF;
+    --text: #FFFFFF;
+  }
+}
