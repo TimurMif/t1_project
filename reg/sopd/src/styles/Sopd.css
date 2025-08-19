@@ -73,4 +73,10 @@
         max-height: 420px;
         font-size: 18px;
     }
+    .button-accept {
+        font-size: 16px !important;
+    }
+    .button-fault {
+        font-size: 16px !important;
+    }
 }
