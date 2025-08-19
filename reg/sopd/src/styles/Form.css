@@ -1,0 +1,127 @@
+@import url('../constants/colors.css');
+@import url('../constants/font.css');
+
+form {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-family: 'ALSHauss', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.9 !important;
+}
+
+.text-field-root .MuiOutlinedInput-root,
+.my-custom-picker .MuiOutlinedInput-root {
+    border-radius: 12px !important;
+    background-color: var(--input-bg);
+    color: var(--text) !important;
+}
+
+
+.text-field-root .MuiOutlinedInput-notchedOutline,
+.my-custom-picker .MuiOutlinedInput-notchedOutline {
+    border: 1px solid var(--input-border) !important;
+    border-radius: 12px !important;
+    color: var(--text) !important;
+}
+
+
+.text-field-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+.my-custom-picker .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border: 2px solid #1976d2 !important; 
+    border-radius: 12px !important; 
+    color: var(--text) !important;
+}
+
+
+.text-field-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
+.my-custom-picker .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border: 1px solid var(--input-border) !important;
+    color: var(--text) !important;
+}
+
+.my-custom-picker, .css-eqc3kq-MuiFormControl-root-MuiPickersTextField-root {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border) !important;
+    border-radius: 12px !important;
+    color: var(--text) !important;
+}
+
+.first-input-field {
+    margin-top: 20px !important;
+    color: var(--text) !important;
+}
+
+.MuiPickersInputBase-root, .MuiPickersOutlinedInput-root, .MuiPickersInputBase-colorPrimary, .MuiPickersInputBase-adornedEnd, .css-vycme6-MuiPickersInputBase-root-MuiPickersOutlinedInput-root {
+    border-radius: 12px !important; 
+    color: var(--text) !important;
+}
+
+.my-custom-picker {
+    border: none !important;
+    color: var(--text) !important;
+}
+
+.text-field-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #1976d2 !important;
+  border-width: 2px !important;
+  color: var(--text) !important;
+}
+
+.text-field-root .MuiInputLabel-root,
+.my-custom-picker .MuiInputLabel-root {
+  color: var(--input-placeholder) !important;
+}
+
+
+.text-field-root .MuiInputLabel-root.Mui-focused,
+.my-custom-picker .MuiInputLabel-root.Mui-focused {
+  color: var(--input-placeholder) !important;
+}
+
+
+.text-field-root .MuiOutlinedInput-input::placeholder,
+.my-custom-picker .MuiOutlinedInput-input::placeholder {
+  color: var(--input-placeholder) !important;
+  opacity: 1 !important;
+}
+
+.text-field-root .MuiInputLabel-root.Mui-filled,
+.my-custom-picker .MuiInputLabel-root.Mui-filled {
+  color: var(--input-placeholder) !important;
+}
+
+.my-custom-picker .MuiSvgIcon-root {
+  color: var(--input-placeholder) !important; 
+}
+
+.my-custom-picker .MuiInputAdornment-root button .MuiSvgIcon-root {
+  color: var(--input-placeholder) !important;
+}
+
+.country-code-selector .MuiSelect-select {
+  color: var(--text) !important;
+}
+
+.country-code-selector .MuiSvgIcon-root {
+  color: var(--text) !important;
+}
+
+.button-submit {
+    border-radius: 8px !important;
+    background-color: #1281E2 !important;
+    margin-top: 10px !important;
+    padding: 10px 0px !important;
+    font-family: 'ALSHauss', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+}
+
+@media (width < 1200px) {
+    form {
+        width: 80%;
+    }
+}

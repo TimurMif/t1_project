@@ -1,0 +1,22 @@
+.load-place {
+    text-align: center;
+}
+
+.load-place h1 {
+    font-family: 'ALSHauss', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+}
+
+.anim-place {
+    width: 70%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (width < 500px) {
+    .load-place h1 {
+        font-size: 20px;
+    }
+}
