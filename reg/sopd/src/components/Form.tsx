@@ -198,7 +198,7 @@ function Form({ onFormSubmit }: FormProps) {
         </LocalizationProvider>
         <TextField
             label="Номер телефона"
-            type="number"
+            type="tel"
             value={formData.phoneNumber}
             onChange={handleChange('phoneNumber')}
             error={!!errors.phoneNumber}
