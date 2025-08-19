@@ -67,10 +67,10 @@
 
 @media (width < 550px) {
     .sopd-place h1 {
-        font-size: 18px;
+        font-size: 20px;
     }
     .text-place {
-        max-height: 400px;
-        font-size: 16px;
+        max-height: 420px;
+        font-size: 18px;
     }
 }
