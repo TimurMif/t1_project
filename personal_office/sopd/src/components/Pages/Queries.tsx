@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import '../../styles/Queries.css';
 import { Button, FormControl, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
-import LetterForm from "../letterForm";
+import LetterForm from "../LetterForm";
 
 function Queries() {
     const [sortBy, setSortBy] = useState('');
