@@ -4,8 +4,10 @@ import Header from '../Header';
 import Queries from './Queries';
 import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
-import SettingsIcon from '@mui/icons-material/Settings';
+import EditDocumentIcon from '@mui/icons-material/EditDocument';
 import Edit from './Edit';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/app/store';
 
 function MainPage() {
     const [currentPage, setCurPage] = useState('queries');
@@ -14,7 +16,10 @@ function MainPage() {
             setCurPage(newPage);
         }
     }
-    const statusProfile = "Менеджер";
+    const data = useSelector((state: RootState) => state.data);
+    const dispatch = useDispatch();
+
+    const statusProfile = data.status === 'admin' ? 'Администратор' : 'Менеджер';
     return (
         <div className="main-page">
             <header>
@@ -31,10 +36,12 @@ function MainPage() {
                                 <SendIcon className='icon'></SendIcon>
                                 Отправленные
                             </ToggleButton>
-                            <ToggleButton className='menu-point' value='edit' aria-label='edit' onClick={handleToggleButton}>
-                                <SettingsIcon className='icon'></SettingsIcon>
-                                Редактирование
-                            </ToggleButton>
+                            {data.status === 'admin' && (
+                                <ToggleButton className='menu-point' value='edit' aria-label='edit' onClick={handleToggleButton}>
+                                    <EditDocumentIcon className='icon'></EditDocumentIcon>
+                                    Редактирование
+                                </ToggleButton>
+                            )}
                         </ToggleButtonGroup>
                     </nav>
                 </div>

@@ -5,6 +5,9 @@
   --input-placeholder: #9294A1;
   --logo: #000000;
   --text: #000000;
+  --window-bg: #fff;
+  --accept-button: #00AAE6;
+  --select-table: #b5ebff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,5 +18,8 @@
     --input-placeholder: #EEEEEE;
     --logo: #FFFFFF;
     --text: #FFFFFF;
+    --window-bg: #878787;
+    --accept-button: #00AAE6;
+    --select-table: #b5ebff;
   }
 }

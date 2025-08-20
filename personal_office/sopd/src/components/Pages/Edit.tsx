@@ -3,24 +3,30 @@ import '../../styles/Edit.css';
 import { TextField } from '@mui/material';
 import Editor from '@monaco-editor/react';
 import DOMPurify from 'dompurify';
+import { RootState } from '@/app/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { upload } from '@/features/send_settings/settingsSlice';
 
 interface FormState {
-  emailToSend: string;
-  htmlContent: string;
-  sopdContent: string;
+  emailSendFrom: string,
+  htmlContent: string,
+  sopdContent: string,
 }
 
 function Edit() {
+    const settings = useSelector((state: RootState) => state.settings);
+    const dispatch = useDispatch();
+
     const [errors, setErrors] = useState<FormState>({
-        emailToSend: '',
+        emailSendFrom: '',
         htmlContent: '',
         sopdContent: '',
     });
 
     const [editFormData, setEditFormData] = useState<FormState>({
-        emailToSend: '',
-        htmlContent: '',
-        sopdContent: '',
+        emailSendFrom: settings.emailSendFrom,
+        htmlContent: settings.htmlContent,
+        sopdContent: settings.sopdContent,
     });
 
     const handleChange = (field: keyof FormState) => (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,11 +34,17 @@ function Edit() {
             ...prev,
             [field]: e.target.value
         }));
+        dispatch(upload({
+            [field]: e.target.value
+        }));
     };
 
     const handleCodeChange = (code: string | undefined) => {
         setEditFormData(prev => ({
             ...prev,
+            'htmlContent': code || ""
+        }));
+        dispatch(upload({
             'htmlContent': code || ""
         }));
     }
@@ -50,10 +62,10 @@ function Edit() {
                         type='email'
                         label="Email"
                         variant="outlined"
-                        value={editFormData.emailToSend}
-                        onChange={handleChange('emailToSend')}
-                        error={!!errors.emailToSend}
-                        helperText={errors.emailToSend}
+                        value={editFormData.emailSendFrom}
+                        onChange={handleChange('emailSendFrom')}
+                        error={!!errors.emailSendFrom}
+                        helperText={errors.emailSendFrom}
                         fullWidth
                         classes={{
                             root: 'text-field-root edit',
@@ -63,7 +75,9 @@ function Edit() {
                 <div className='input-edit-place html-place'>
                     <label htmlFor='email-to-send-input' className='label-edit-input'>Редактор письма</label>
                     <Editor
+                        className='code-editor'
                         height="500px"
+                        theme='vs-dark'
                         defaultLanguage="html"
                         value={editFormData.htmlContent}
                         onChange={handleCodeChange}

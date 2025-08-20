@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import '../../styles/Queries.css';
 import { Button, FormControl, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
+import LetterForm from "../letterForm";
 
 function Queries() {
     const [sortBy, setSortBy] = useState('');
     const handleChange = (event: SelectChangeEvent) => {
         setSortBy(event.target.value);
     };
+
+    const [openWindow, setOpenWindow] = useState(false);
     return (
         <div className="content-wrapper-1">
             <h1>Отправленные письма</h1>
@@ -17,7 +20,8 @@ function Queries() {
                         <p className="sort-by">Сортировать по
                             <span>
                                 <FormControl>
-                                    <Select
+                                    <Select 
+                                        className="selector-sort-by"
                                         value={sortBy}
                                         onChange={handleChange}
                                         displayEmpty
@@ -33,10 +37,11 @@ function Queries() {
                             </span>
                         </p>
                     </div>
-                    <Button className="write-btn">
+                    <Button className="write-btn" onClick={() => {setOpenWindow(true)}}>
                         <EditIcon></EditIcon>
                         Написать
                     </Button>
+                    <LetterForm isOpen={openWindow} setIsOpen={setOpenWindow}></LetterForm>
                 </div>
                 <div className="table-place">
                     <table>

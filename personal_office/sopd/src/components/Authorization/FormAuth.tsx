@@ -14,6 +14,12 @@ interface FormState {
 }
 
 function Form() {
+    const login_manager = "tim";
+    const password_manager = "1477";
+
+    const login_admin = "admin";
+    const password_admin = "1555";
+
     const navigate = useNavigate();
 
     const [formAuthData, setFormAuthData] = useState<FormState>({
@@ -47,6 +53,11 @@ function Form() {
                 ...formAuthData,
             }));
             dispatch(isLogin(true));
+            if (formAuthData.login == login_admin && formAuthData.password == password_admin) {
+                dispatch(upload({
+                    'status': 'admin'
+                }))
+            }
             console.log(formAuthData);
             navigate('/lk');
         }
@@ -54,19 +65,16 @@ function Form() {
 
     const validateForm = (): boolean => {
         const newErrors: Partial<Record<keyof FormState, string>> = {};
-
-        const login = "tim";
-        const password = "1233";
         
         if (!formAuthData.login.trim()) {
             newErrors.login = 'Введите логин';
-        } else if (formAuthData.login != login) {
+        } else if (formAuthData.login != login_manager && formAuthData.login != login_admin) {
             newErrors.password = 'Неверный логин или пароль';
         }
 
         if (!formAuthData.password.trim()) {
             newErrors.password = 'Введите пароль';
-        } else if (formAuthData.password != password) {
+        } else if (formAuthData.password != password_manager && formAuthData.password != password_admin) {
             newErrors.password = 'Неверный логин или пароль';
         }
 
@@ -86,6 +94,13 @@ function Form() {
         onChange={handleChange('login')}
         classes={{
             root: 'text-field-root first-input-field',
+        }}
+        slotProps={{
+            input: {
+                inputProps: {
+                    maxLength: 40
+                }
+            }
         }}
         required
         variant="outlined" />

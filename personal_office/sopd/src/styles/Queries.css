@@ -29,7 +29,7 @@
 
 .write-btn {
     text-transform: none !important;
-    color: #00AAE6 !important;
+    color: var(--accept-button) !important;
     font-weight: 550 !important;
     padding: 0px !important;
     margin: 0px !important;
@@ -57,6 +57,10 @@ th,td {
     text-align: left;
 }
 
+tr:hover {
+    background-color: var(--select-table);
+}
+
 .status {
     color: var(--text);
 }
@@ -71,6 +75,10 @@ th,td {
 
 .status.Ожидание {
     color: rgb(135, 135, 135);
+}
+
+.selector-sort-by .MuiSelect-icon {
+    color: var(--input-placeholder) !important;
 }
 
 .sort-by {

@@ -30,3 +30,7 @@
     font-size: 20px;
     font-weight: 500;
 }
+
+.code-editor {
+    border: 2px solid var(--input-border);
+}

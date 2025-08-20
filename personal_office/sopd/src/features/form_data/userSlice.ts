@@ -26,8 +26,11 @@ export const dataSlice = createSlice({
       console.log('isLogin изменен на: ', action.payload);
       return { ...state, isLogin: action.payload };
     },
+    resetData: () => {
+      return initialState
+    }
   },
 });
 
-export const { upload, isLogin } = dataSlice.actions;
+export const { upload, isLogin, resetData } = dataSlice.actions;
 export default dataSlice.reducer;
