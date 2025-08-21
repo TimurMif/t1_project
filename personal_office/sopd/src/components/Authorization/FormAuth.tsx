@@ -14,7 +14,7 @@ interface FormState {
 }
 
 function Form() {
-    const login_manager = "tim";
+    const login_manager = "man";
     const password_manager = "1477";
 
     const login_admin = "admin";
